@@ -1,0 +1,392 @@
+body{
+    margin: 0;
+}
+
+nav{
+    position: relative;
+}
+nav ul{
+    padding: 20px;
+    margin-right: auto;
+    width: 350px;
+    /*margin: 0 auto;*/
+    /*width: auto;*/
+}
+nav li{
+}
+nav a{
+    line-height: 50px;
+    height: 50px;
+}
+nav li a{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+nav li:last-child a{
+    border-right: 0;
+}
+nav a:hover, nav a:active{
+}
+nav a#pull{
+    display: none;
+}
+html {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+
+ul{
+    /*list-style-type: none;*/
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+}
+li{
+    /*position: relative;*/
+    display: inline-block;
+}
+li a{
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14.5px 16px;
+    text-decoration: none;
+}
+li a:hover{
+    /*color: #597812;*/
+    color: #FFD400;
+    font-weight:normal;
+}
+.menu {
+    width: 5000px;
+    height: 50px;
+    text-align: center;
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    color: white;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    font-size: 14pt;
+    font-family: 'PT Sans', Arial, Sans-serif;
+}
+
+.auth-box{
+    display: inline-block;
+    width: 200px;
+    margin-left: auto;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.auth-box a{
+    padding: 14.5px 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    line-height: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+#login-button{
+    border: none;
+    background-color: transparent;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+#login-button:hover{
+    color: #FFD400;
+    font-weight:normal;
+}
+
+#login-button svg{
+    margin-right: 5px;
+}
+
+.modal-title{
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 17px;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 0 auto; */
+}
+
+#regist-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 49%;
+    padding-bottom: 50px;
+    /* margin: 0 auto; */
+}
+
+
+#login-form input[type="text"], 
+#login-form input[type="password"]{
+    padding-left: 15px;
+}
+
+#login-form input{
+    height: 50px;
+    font-size: 17px;
+    margin: 2px;
+}
+
+.input-box {
+    position: relative;
+    width: 90%;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.code-input-box{
+    position: relative;
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 40px;
+    right: 20%;
+    display: block;
+}
+
+.input{
+    font-size: 15px;
+    color: #222222;
+    width: 87%;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: left;
+    padding-left: 1%;
+    position: relative;
+    background: none;
+    z-index: 5;
+    position: relative;
+  }
+  
+.input::placeholder { color: #aaaaaa;}
+.input:focus { outline: none; }
+.email-code{ padding-left: 6px;}
+
+.input-box span {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 43%;  /* right로만 바꿔주면 오 - 왼 */
+    background-color: #666;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+  
+.input-box label {
+  position: absolute;
+  color: #aaa;
+  left: 27%;
+  width: 50%;
+  text-align: left;
+  transform: translateX(-50%);
+  font-size: 16px;
+  bottom: 8px;
+  transition: all .2s;
+}
+  
+.input:focus ~ label, .input:valid ~ label {
+  font-size: 16px;
+  bottom: 40px;
+  color: #666;
+  font-weight: bold;
+}
+  
+.input:focus ~ span, .input:valid ~ span {
+  width: 88%;
+}
+
+.email-verify-btn{
+    text-decoration: none;
+    position: relative;
+    right: 10%;
+    bottom: 5px;
+    z-index: 10;
+    color: #aaa;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.id-verify-btn{
+    text-decoration: none;
+    position: relative;
+    right: 10%;
+    bottom: 5px;
+    color: #aaa;
+    z-index: 10;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.email-code-check-btn{
+    text-decoration: none;
+    position: absolute;
+    color: #aaa;
+    left: 90%;
+    bottom: -1px;
+    z-index: 10;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+    width: 50px;
+}
+
+.success-box{
+    display: inline-block;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 79%;
+    top: -4px;
+    z-index: 0;
+    transform: scale(0.18);
+    transform-origin: top left;
+}
+
+.post-code-btn{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    position: absolute;
+    right: 12%;
+    bottom: 5px;
+    z-index: 10;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.timer{
+    position: absolute;
+    left: 66%;
+    font-size: 15px;
+    color: #aaa;
+}
+
+.post-code-btn:hover, 
+.id-verify-btn:hover, 
+.email-verify-btn:hover, 
+.email-code-check-btn:hover{
+    cursor: pointer;
+    color: #000;
+    background-color: rgb(231, 231, 231);
+    transition: all 0.5s ease;
+}
+
+#google-login img{
+    object-fit:cover;
+    width: 18.75rem;  
+}
+
+#kakao-login{
+    transform: scale(0.55);
+    transform-origin: top;
+}
+
+#google-login:hover, #kakao-login:hover{
+    cursor: pointer;
+}
+
+
+.go-regist{
+    width: 65%;
+    margin: 0 auto;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.go-regist:hover{
+    color: rgb(102, 102, 255);
+}
+
+.login-input-box {
+    position: relative;
+    width: 90%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.input{
+    font-size: 15px;
+    color: #222222;
+    width: 87%;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: left;
+    padding-left: 1%;
+    position: relative;
+    background: none;
+    z-index: 5;
+    position: relative;
+  }
+  
+.input::placeholder { color: #aaaaaa;}
+.input:focus { outline: none; }
+.email-code{ padding-left: 6px;}
+
+.login-input-box span {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 43%;  /* right로만 바꿔주면 오 - 왼 */
+    background-color: #666;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+  
+.login-input-box label {
+  position: absolute;
+  color: #aaa;
+  left: 27%;
+  width: 50%;
+  text-align: left;
+  transform: translateX(-50%);
+  font-size: 16px;
+  bottom: 8px;
+  transition: all .2s;
+}
+  
+.input:focus ~ label, .input:valid ~ label {
+  font-size: 16px;
+  bottom: 40px;
+  color: #666;
+  font-weight: bold;
+}
+  
+.input:focus ~ span, .input:valid ~ span {
+  width: 88%;
+}

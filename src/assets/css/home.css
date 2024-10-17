@@ -1,0 +1,339 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrap {
+    position:relative;
+    display: flexbox;
+    flex-direction: column;
+    top:0;
+    width:100%;
+    height:100vh;
+    transition: 0.8s;
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 레이아웃 컨테이너 */
+.container {
+    margin: 0;
+    padding: 0;
+    display: flexbox;
+    flex-direction: column;
+    align-items:center; 
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* box-sizing: border-box; */
+    z-index: 10;
+    overflow: hidden;
+}
+
+/*Scroll Icon*/
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mouse_scroll {
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 100px;
+    margin-top: 150px;
+}
+
+.mouse_scroll:hover{
+    cursor: pointer;
+}
+
+.m_scroll_arrows
+{
+    display: block;
+    width: 5px;
+    height: 5px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    margin: 0 0 3px 4px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.unu
+{
+    margin-top: 1px;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+
+}
+
+.unu
+{
+    -webkit-animation-delay: .1s;
+    -moz-animation-delay: .1s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.doi
+{
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -webkit-animation-direction: alternate;
+
+    animation-delay: .2s;
+    animation-direction: alternate;
+
+    margin-top: -6px;
+}
+
+.trei
+{
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    -webkit-animation-direction: alternate;
+
+    animation-delay: .3s;
+    animation-direction: alternate;
+
+
+    margin-top: -6px;
+}
+
+.mouse {
+    height: 47px;
+    width: 29px;
+    border-radius: 14px;
+    transform: none;
+    border: 3px solid white;
+    top: 170px;
+
+}
+
+.wheel {
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 5px auto;
+    background: white;
+    position: relative;
+
+    height: 5px;
+    width: 5px;
+    border: 2px solid #fff;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.wheel {
+    -webkit-animation: mouse-wheel 0.6s linear infinite;
+    -moz-animation: mouse-wheel 0.6s linear infinite;
+    animation: mouse-wheel 0.6s linear infinite;
+}
+
+@-webkit-keyframes mouse-wheel{
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+
+@-moz-keyframes mouse-wheel {
+    0%   { top: 1px; }
+    10%  { top: 3px; }
+    20%  { top: 5px; }
+    30%  { top: 7px; }
+    40%  { top: 9px; }
+    50%  { top: 10px; } /* 최대 10px까지 이동 */
+    60%  { top: 9px; }
+    70%  { top: 7px; }
+    80%  { top: 5px; }
+    90%  { top: 3px; }
+    100% { top: 1px; }
+}
+@-o-keyframes mouse-wheel {
+    0%   { top: 1px; }
+    10%  { top: 3px; }
+    20%  { top: 5px; }
+    30%  { top: 7px; }
+    40%  { top: 9px; }
+    50%  { top: 10px; } /* 최대 10px까지 이동 */
+    60%  { top: 9px; }
+    70%  { top: 7px; }
+    80%  { top: 5px; }
+    90%  { top: 3px; }
+    100% { top: 1px; }
+}
+@keyframes mouse-wheel {
+    0%   { top: 1px; }
+    10%  { top: 3px; }
+    20%  { top: 5px; }
+    30%  { top: 7px; }
+    40%  { top: 9px; }
+    50%  { top: 10px; } /* 최대 10px까지 이동 */
+    60%  { top: 9px; }
+    70%  { top: 7px; }
+    80%  { top: 5px; }
+    90%  { top: 3px; }
+    100% { top: 1px; }
+}
+
+@-webkit-keyframes mouse-scroll {
+
+    0%   { opacity: 0;}
+    50%  { opacity: .5;}
+    100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+}
+
+/* map container */
+.main-container{
+    width: 100%;
+    height: 92%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 108%;
+    /* border-radius: 5px; */
+    z-index: 1;   
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 8%;
+    min-height: 100px;
+    width: 100%;
+    background-color: rgb(244, 239, 232);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(115, 115, 115, 0.42);
+}
+
+.title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.scroll-to-top {
+    position: fixed;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(244, 239, 232);
+    color: black;
+    top: 93%;
+    right: 2%;
+    z-index: 2;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 2px 2px 1px rgba(115, 115, 115, 0.42);
+}
+
+.scroll-to-top:hover{
+    background-color: rgb(230, 228, 226);
+}
+
+.select-box{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    /* height: 100px; */
+}
+
+.select{
+    margin-left: 10px;
+    height: 45px;
+    display: inline-block;
+}
+
+.btn-3d {
+    position: relative;
+    display: inline-block;
+    font-size: 17px;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    bottom: 7px;
+    /* margin-bottom: 5px; */
+    /* margin: 20px 10px 10px; */
+    border-radius: 6px;
+    text-align: center;
+    transition: top .01s linear;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.btn-3d.blue:hover {
+    background-color: #699DD1;
+    color: white;
+}
+
+.btn-3d:active {
+    top: 2px;
+}
+
+.btn-3d.blue {
+    background-color: #6DA2D9;
+    box-shadow: 0 0 0 1px #6698cb inset,
+            0 0 0 2px rgba(255,255,255,0.15) inset,
+            0 8px 0 0 rgba(110, 164, 219, .7),
+            0 8px 0 1px rgba(0,0,0,.4),
+            0 8px 8px 1px rgba(0,0,0,0.5);
+}
+
+.btn-3d.blue:active {
+    box-shadow: 0 0 0 1px #6191C2 inset,
+            0 0 0 2px rgba(255,255,255,0.15) inset,
+            0 0 0 1px rgba(0,0,0,0.4);
+}
