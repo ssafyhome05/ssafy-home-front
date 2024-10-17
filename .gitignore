@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+src/assets/mp4/sample.mp4
+src/assets/resources/geoJson.json
+src/assets/resources/emd.json
