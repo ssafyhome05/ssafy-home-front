@@ -2,7 +2,12 @@
   <div class="menu">
     <nav class="clearfix">
       <ul class="clearfix">
-        <li><a href="#">Home</a></li>
+        <!-- <li><a href="#">Home</a></li> -->
+        <li>
+          <a href="#">
+            <img :src="logo" class="logo" />
+          </a>
+        </li>
         <!--""<-여기 부분에 URL 작성하면 됨-->
         <li><a href="#">Community</a></li>
         <li><a href="#">About</a></li>
@@ -53,6 +58,7 @@ export default {
   },  
   data() {
     return {
+      logo: require("../assets/images/ssafyhome_logo.png"),
       kakao: require("../assets/images/kakao_login_medium.png"),    
       google: require("../assets/images/web_light_sq_ctn@2x.png"),
     };

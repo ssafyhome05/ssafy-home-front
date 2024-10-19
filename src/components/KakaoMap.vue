@@ -27,7 +27,16 @@
     </div>   
 
     <div class="main-container bg-transparent" id="map">
+        
+    </div>
+    <div class="side-list">
+       <div class="list-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1">
+    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+</svg>
 
+       </div>
     </div>
 </template>
 <script>
@@ -35,6 +44,7 @@
     import proj4 from 'proj4';
     import { toRaw } from 'vue';
     import emdData from '../assets/resources/geoJson.json';
+    import { KAKAO_API_KEY } from '@/assets/resources/config';
 
 
     export default{
@@ -71,13 +81,64 @@
             
             // // 년도 선택
             // document.querySelector("#year").addEventListener("change", this.getMonth);
+
         },
         methods: {
+            test(){
+                // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
+                var polygonPath = [
+                    new window.kakao.maps.LatLng(33.506281433743794, 126.5289398422101),
+                    new window.kakao.maps.LatLng(33.50633689865277, 126.52931339968883),
+                    new window.kakao.maps.LatLng(33.51207898611157, 126.53168489136773),
+                    new window.kakao.maps.LatLng(33.51323717807593, 126.53199304556553),
+                    new window.kakao.maps.LatLng(33.51342236354489, 126.5318977607303),
+                    new window.kakao.maps.LatLng(33.51521066767656, 126.5284743362122),
+                    new window.kakao.maps.LatLng(33.515259253473815, 126.52834190874637),
+                    new window.kakao.maps.LatLng(33.515956748447444, 126.52515340694484),
+                    new window.kakao.maps.LatLng(33.51597702156738, 126.52502819247546),
+                    new window.kakao.maps.LatLng(33.51604123596081, 126.52401719640083),
+                    new window.kakao.maps.LatLng(33.5143696373327, 126.52309734727868),
+                    new window.kakao.maps.LatLng(33.51354173939665, 126.5232518756763),
+                    new window.kakao.maps.LatLng(33.51255202847511, 126.52351963496913),
+                    new window.kakao.maps.LatLng(33.506346417334335, 126.52883270616108)
+                ];
+
+
+                // 지도에 표시할 다각형을 생성합니다
+                var polygon = new window.kakao.maps.Polygon({
+                    path:polygonPath, // 그려질 다각형의 좌표 배열입니다
+                    strokeWeight: 3, // 선의 두께입니다
+                    strokeColor: '#ad69d1', // 선의 색깔입니다
+                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                    strokeStyle: 'longdash', // 선의 스타일입니다
+                    fillColor: '#ad69d1', // 채우기 색깔입니다
+                    fillOpacity: 0.7 // 채우기 불투명도 입니다
+                });
+
+                polygon.setMap(this.kakaoMap);
+            },  
+
+            test2(){
+                // 지도에 표시할 원을 생성합니다
+                var circle = new window.kakao.maps.Circle({
+                    center : new window.kakao.maps.LatLng(33.51118906730679, 126.52666529804483),  // 원의 중심좌표 입니다 
+                    radius: 591.7479985413444, // 미터 단위의 원의 반지름입니다 
+                    strokeWeight: 5, // 선의 두께입니다 
+                    strokeColor: '#d16b69', // 선의 색깔입니다
+                    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                    strokeStyle: 'dashed', // 선의 스타일 입니다
+                    fillColor: '#d16b69', // 채우기 색깔입니다
+                    fillOpacity: 0.7  // 채우기 불투명도 입니다   
+                }); 
+
+                // 지도에 원을 표시합니다 
+                circle.setMap(this.kakaoMap); 
+            },
             // kakao api 불러오기
             loadScript() {
                 const script = document.createElement("script");
                 script.src =
-                    "//dapi.kakao.com/v2/maps/sdk.js?appkey=e7cf7813e371ea93a852ee8a10e1b8a5&autoload=false&libraries=services"; 
+                    `//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_API_KEY}&autoload=false&libraries=services`; 
                 script.onload = () => window.kakao.maps.load(this.loadMap); 
 
                 document.head.appendChild(script);
@@ -269,7 +330,7 @@
             },
 
             async searchHouse(dong){            
-                alert("검색 시작");
+                // alert("검색 시작");
                 try {
                     const response = await axios.post('http://localhost:8081/house', null, {
                         params: {
@@ -321,6 +382,9 @@
                 } catch (error) {
                     console.error("데이터 가져오기에 실패했습니다:", error);
                 }
+                
+                // this.test();
+                // this.test2();
             },
 
             // 이전 마커 초기화

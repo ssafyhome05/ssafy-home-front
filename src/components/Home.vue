@@ -11,7 +11,8 @@
       <div class="masthead">
         <div class="masthead-content text-white">
           <div class="container-fluid px-4 px-lg-0">
-            <h1 class="fst-italic lh-1 mb-4">Our Website is Coming Soon</h1>
+            <img :src="logo" class="main-logo" />
+            <h1 class="fst-italic lh-1 mb-4">Our SSAFYHOME is Coming Soon</h1>
             <p class="mb-5">
               We're working hard to finish the development of this site. Sign up
               below to receive updates and to be notified when we launch!
@@ -85,6 +86,7 @@ export default {
   },
   data() {
     return {
+      logo: require("../assets/images/ssafyhome_logo.png"),
       bgmp4: require("../assets/mp4/bg.mp4"),
       kakaoMap: null,
       page: 0, // page 변수를 data에 추가

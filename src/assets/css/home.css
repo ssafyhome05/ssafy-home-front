@@ -41,6 +41,20 @@ body::-webkit-scrollbar {
     box-sizing: border-box;
 }
 
+.main-logo{
+    height: 300px;
+    position: relative;
+    margin-left: 100px;
+}
+
+@media (min-width: 992px) {
+    .main-logo{
+        height: 180px;
+        margin-top: 70px;
+        margin-left: 30px;
+    }
+}
+
 .mouse_scroll {
     display: block;
     margin: 0 auto;
@@ -230,12 +244,15 @@ body::-webkit-scrollbar {
 
 /* map container */
 .main-container{
-    width: 100%;
+    /* width: 100%; */
+    /* left: 0; */    
+    width: 70%;
+    left: 30%;
     height: 92%;
     display: flex;
     justify-content: center;
     position: absolute;
-    left: 0;
+
     top: 108%;
     /* border-radius: 5px; */
     z-index: 1;   
@@ -246,11 +263,13 @@ body::-webkit-scrollbar {
 .header{
     height: 8%;
     min-height: 100px;
-    width: 100%;
+    /* width: 100%;
+    left: 0; */
+    width: 70%;
+    left: 30%;
     background-color: rgb(244, 239, 232);
     position: absolute;
     top: 100%;
-    left: 0;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -315,7 +334,8 @@ body::-webkit-scrollbar {
 }
 
 .btn-3d.blue:hover {
-    background-color: #699DD1;
+    background-color: #699dd1;
+    /* background-color: #929bfa7c; */
     color: white;
 }
 
@@ -336,4 +356,31 @@ body::-webkit-scrollbar {
     box-shadow: 0 0 0 1px #6191C2 inset,
             0 0 0 2px rgba(255,255,255,0.15) inset,
             0 0 0 1px rgba(0,0,0,0.4);
+}
+
+.side-list{
+    position:absolute;
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    left: 0;
+    z-index: 5;
+    /* border-radius: 0px 10px 10px 0px; */
+    background-color: rgb(244, 239, 232);
+    box-shadow: 3px 0px 10px rgba(115, 115, 115, 0.42);
+    /* display: none; */
+}
+
+.list-header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.list-header svg:hover{
+    cursor: pointer;
+    /* background-color: rgba(115, 115, 115, 0.42); */
+    /* transition: all 0.3s ease-in-out; */
+
 }
